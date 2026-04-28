@@ -1,108 +1,46 @@
 module.exports.config = {
-  name: "pairfull",
-  version: "3.1.0",
+  name: "pair",
+  version: "1.0.0", 
   hasPermssion: 0,
-  credits: "Rudra Remix by Copilot",
-  description: "Pair command with glowing text and 2 profile pics",
-  commandCategory: "love",
-  cooldowns: 5,
-  dependencies: {
-    "axios": "",
-    "fs-extra": "",
-    "jimp": ""
-  }
+  credits: "uzairrajput",
+  description: "pairing",
+  commandCategory: "Love", 
+  usages: "pair", 
+  cooldowns: 10
 };
+module.exports.run = async function({ api, event,Threads, Users }) {
+        const axios = global.nodemodule["axios"];
+        const fs = global.nodemodule["fs-extra"];
 
-async function makeImage({ one, two, name1, name2, shayari, rating }) {
-  const fs = require("fs-extra");
-  const axios = require("axios");
-  const jimp = require("jimp");
+        var { participantIDs } =(await Threads.getData(event.threadID)).threadInfo;
+        var tle = Math.floor(Math.random() * 101);
+        var namee = (await Users.getData(event.senderID)).name
+        const botID = api.getCurrentUserID();
+        const listUserID = event.participantIDs.filter(ID => ID != botID && ID != event.senderID);
+        var id = listUserID[Math.floor(Math.random() * listUserID.length)];
+        var name = (await Users.getData(id)).name
+        var arraytag = [];
+        const gifCute = ["https://ibb.co/gLZtTXn1?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeRYU3Sn4QtajyxXj8U7xqb3TSd1hY9d7XukBkiSRo0psexU9GisapAu2b30Q_aem_f2hB4FVZKJBtaqdKNuTK5A","https://ibb.co/979rqCw?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe34dtpx7dxkozWllI7EqKAVuhKT1NvqLI2FyyZE2zlvwQHw8b-mkxnlbQiQM_aem_RmnMJCeMw0kWGVMhxG7psA","https://ibb.co/N6SkGMZ5?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeRGhnfNLZWZoTU6TCOvwKlhRx_ZPA6jCVLlNva6bBQVQbc1YEHZOTFfroi38_aem_OA4V3-CQrgnUyopcRrVRiw","https://ibb.co/kVzhdKBp?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeh5WWOA57s0YtNs4PkoqXLnAmhuyZTQnbFXhH52KcGL0LUFLsPhniz5qh81A_aem_dIEQyKnAwRxNfrUQ2lxidQ","https://ibb.co/1t3M31HP?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEepVCPC0H7hmd-CFJWK9hlEvYM1HfLxS9GsGYkCNXW5innRt1tj8cyikOgEBo_aem_sB3GjLjNfoQP2xEVc7Y4Rw","https://ibb.co/NHfDYMn?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe0KUkQ1jCC3DTOI0LG9LuwfVAjnAXVNr4Eg12SF3iJy_95_uzko8bVmr9VLc_aem_KJPjlrUt78nwLoxUcda4aA"];
+                arraytag.push({id: event.senderID, tag: namee});
+                arraytag.push({id: id, tag: name});
 
-  // Backgrounds (Direct Links from Postimage)
-  const backgrounds = [
-    "https://i.postimg.cc/65x1Q2Wx/image-1771265751438.jpg"
-  ];
-  const bgURL = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-  let pairing_img = await jimp.read(bgURL);
 
-  const avatarOne = `avt_${one}.png`;
-  const avatarTwo = `avt_${two}.png`;
-  const pathImg = `pairing_${one}_${two}.png`;
+        let Avatar = (await axios.get( `https://graph.facebook.com/${event.senderID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" } )).data; 
+            fs.writeFileSync( __dirname + "/cache/avt.png", Buffer.from(Avatar, "utf-8") );
 
-  // Download profile pics
-  const getAvatarOne = (await axios.get(
-    `https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
-    { responseType: "arraybuffer" }
-  )).data;
-  fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne));
+        let gifLove = (await axios.get(gifCute[Math.floor(Math.random() * gifCute.length)], { responseType: "arraybuffer" } )).data; 
+            fs.writeFileSync( __dirname + "/cache/giflove.png", Buffer.from(gifLove, "utf-8") );
 
-  const getAvatarTwo = (await axios.get(
-    `https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
-    { responseType: "arraybuffer" }
-  )).data;
-  fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo));
+        let Avatar2 = (await axios.get( `https://graph.facebook.com/${id}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: "arraybuffer" } )).data;
+            fs.writeFileSync( __dirname + "/cache/avt2.png", Buffer.from(Avatar2, "utf-8") );
 
-  let imgOne = await jimp.read(avatarOne);
-  let imgTwo = await jimp.read(avatarTwo);
+        var imglove = [];
 
-  imgOne.resize(250, 250);
-  imgTwo.resize(250, 250);
+              imglove.push(fs.createReadStream(__dirname + "/cache/avt.png"));
+              imglove.push(fs.createReadStream(__dirname + "/cache/giflove.png"));
+              imglove.push(fs.createReadStream(__dirname + "/cache/avt2.png"));
 
-  // Place side by side on background
-  pairing_img.composite(imgOne, 150, 200);
-  pairing_img.composite(imgTwo, 450, 200);
-
-  // Glow effect for names
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_GREEN), 200, 500, `💑 ${name1} ❤️ ${name2}`);
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_WHITE), 202, 502, `💑 ${name1} ❤️ ${name2}`);
-
-  // Glow effect for shayari
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_RED), 180, 550, shayari);
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_WHITE), 182, 552, shayari);
-
-  // Glow effect for compatibility
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_BLUE), 180, 600, `✨ Compatibility: ${rating} ✨`);
-  pairing_img.print(await jimp.loadFont(jimp.FONT_SANS_32_WHITE), 182, 602, `✨ Compatibility: ${rating} ✨`);
-
-  const raw = await pairing_img.getBufferAsync("image/png");
-  fs.writeFileSync(pathImg, raw);
-  fs.unlinkSync(avatarOne);
-  fs.unlinkSync(avatarTwo);
-
-  return pathImg;
+        var msg = {body: `\n\n\n\n 𝐘𝐄 𝐋𝐎𝐕𝐄𝐑 𝐉𝐘𝐀𝐃𝐀 𝐃𝐈𝐍 𝐍𝐀𝐇𝐈 𝐑𝐀𝐇𝐈𝐍𝐆𝐄 ⚠️📵
+\n ${namee} 💓 ${name}\n◈━━━━🩷😀\n➥𝗟𝗼𝘃𝗲 𝗥𝗮𝘁𝗶𝗼: ${tle}%\n◈━━━━━🧸🩷\n\n➺ 𓆩『 ⸙   ᴅᴇᴡᴀɴɪ ᴛᴇʀɪ.𓆪\n\n◈━━━━━🩷🧸\n\n「 -𝑴𝑨𝑫𝑬 𝑩𝒀\n\n◈━━━━━🩷🧸\n\𝐁𝐔𝐆𝐆𝐀 𝐗 𝐁𝐔𝐆𝐆𝐈 😂 ◈ ─── 🩷🦍- 」`, mentions: arraytag, attachment: imglove}
+        return api.sendMessage(msg, event.threadID, event.messageID)
 }
-
-module.exports.run = async function ({ api, event, Users }) {
-  const fs = require("fs-extra");
-
-  const id1 = event.senderID;
-  const name1 = await Users.getNameUser(id1);
-  const threadInfo = await api.getThreadInfo(event.threadID);
-  const all = threadInfo.participantIDs.filter(u => u !== id1 && u !== api.getCurrentUserID());
-
-  if (all.length === 0) return api.sendMessage("❌ Koi jodi nahi mili bhai 😔", event.threadID);
-
-  const id2 = all[Math.floor(Math.random() * all.length)];
-  const name2 = await Users.getNameUser(id2);
-
-  const shayaris = [
-    "💫 Mohabbat inki taqdeer ban chuki hai 💖",
-    "💘 In dono ki jodi pe rab bhi fakr kare 🙏",
-    "🌟 Ishq bhi sharma jaaye inke aage 😍",
-    "👑 Dil se dil ka milna yeh toh asmaanon ka rishta hai 🕊️",
-    "🔥 Ruh ka milan hai yeh, sirf jism ka nahi 💑",
-    "🌸 Inka rishta toh janmon ka hai 💍"
-  ];
-  const ratings = ["💘 100%", "💫 99.9%", "🔥 98%", "❤️ 101%", "🌟 97.5%", "👑 96.69%"];
-
-  const shayari = shayaris[Math.floor(Math.random() * shayaris.length)] || "Mohabbat inki taqdeer hai 💖";
-  const rating = ratings[Math.floor(Math.random() * ratings.length)] || "100%";
-
-  return makeImage({ one: id1, two: id2, name1, name2, shayari, rating }).then(path =>
-    api.sendMessage({
-      body: `✨ Ye jodi likhi hai bhagwan ne ✨\n━━━━━━━━━━━━━━\n💑 ${name1} ❤️ ${name2}\n${shayari}\n❤️ Compatibility: ${rating}\n━━━━━━━━━━━━━━\n🔱 Powered by RAJ XWD`,
-      mentions: [{ id: id1, tag: name1 }, { id: id2, tag: name2 }],
-      attachment: fs.createReadStream(path)
-    }, event.threadID, () => fs.unlinkSync(path), event.messageID)
-  );
-};
