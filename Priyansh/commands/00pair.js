@@ -20,7 +20,7 @@ module.exports.run = async function({ api, event,Threads, Users }) {
         var id = listUserID[Math.floor(Math.random() * listUserID.length)];
         var name = (await Users.getData(id)).name
         var arraytag = [];
-        const gifCute = ["https://i.imgur.com/JDJCNsL.gif","https://i.imgur.com/ZH5U3Vx.gif","https://i.imgur.com/RmEPAht.gif","https://i.imgur.com/qEVPDyH.gif","https://i.imgur.com/qEVPDyH.gif","https://ibb.co/NHfDYMn?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe0KUkQ1jCC3DTOI0LG9LuwfVAjnAXVNr4Eg12SF3iJy_95_uzko8bVmr9VLc_aem_KJPjlrUt78nwLoxUcda4aA"];
+        const gifCute = ["https://i.ibb.co/0Rw4BTTP/Messenger-creation-1-C7-BD1-AA-3-CFC-4-FF4-8582-82-FE1052591-D.gif","https://i.ibb.co/2016p7X1/Messenger-creation-42-FE17-AC-F16-F-4-DFD-A4-F7-83-CE974936-A3.gif","https://i.ibb.co/Rpd1YWsP/Messenger-creation-A3-FBA4-E1-5589-47-FB-845-B-7-EDC8-DFD23-D1.gif","https://i.ibb.co/GQWVrDkc/Messenger-creation-6-F5-D2524-4-A2-E-4823-8-E9-B-EC46979-A7-FBB.gif","https://i.ibb.co/yFWqJ0Kj/Messenger-creation-498-C3-F99-B27-C-4-D5-D-B656-33-B4-B0-E7-D901.gif","https://i.ibb.co/DPXGtCw8/Messenger-creation-30-BBF4-B3-F16-A-4972-B8-B0-12919-C882-E45.gif"];
                 arraytag.push({id: event.senderID, tag: namee});
                 arraytag.push({id: id, tag: name});
 
