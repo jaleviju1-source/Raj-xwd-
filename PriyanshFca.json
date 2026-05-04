@@ -1,7 +1,9 @@
-Language": "en",
+{
+	"Language": "en",
 	"PreKey": "",
 	"AutoUpdate": true,
 	"MainColor": "#9900FF",
+	"MainName": "[ FCA-SHANKAR ]",
 	"Uptime": false,
 	"Config": "default",
 	"DevMode": false,
@@ -9,15 +11,12 @@ Language": "en",
 	"AutoLogin": false,
 	"BroadCast": true,
 	"AuthString": "SD4S XQ32 O2JA WXB3 FUX2 OPJ7 Q7JZ 4R6Z | https://i.imgur.com/RAg3rvw.png Please remove this !, Recommend If You Using getUserInfoV2",
-	"EncryptFeature": false,
+	"EncryptFeature": true,
 	"ResetDataLogin": false,
 	"AutoInstallNode": false,
 	"AntiSendAppState": true,
 	"AutoRestartMinutes": 0,
-	"RestartMQTT_Minutes": 720,
-	"UserAgent": "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 CrKey/1.54.250320",
-	"AcceptLanguage": "en-US,en;q=0.9",
-	"PreferredRegion": "SIN",
+	"RestartMQTT_Minutes": 0,
 	"Websocket_Extension": {
 		"Status": false,
 		"ResetData": false,
@@ -51,8 +50,7 @@ Language": "en",
 		},
 		"LogFile": {
 			"Use": false,
-			"Explain": "Record memory usage logs to fix errors. Default location: PriyanshFca_Database/memory.logs"
+			"Explain": "Record memory usage logs to fix errors. Default location: Shankar_Database/memory.logs"
 		}
-	},
-	"MainName": "[ FCA-PRIYANSH ]"
+	}
 }
