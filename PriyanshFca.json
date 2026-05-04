@@ -1,9 +1,7 @@
-{
-	"Language": "en",
+Language": "en",
 	"PreKey": "",
 	"AutoUpdate": true,
 	"MainColor": "#9900FF",
-	"MainName": "[ FCA-PRIYANSH ]",
 	"Uptime": false,
 	"Config": "default",
 	"DevMode": false,
@@ -16,7 +14,10 @@
 	"AutoInstallNode": false,
 	"AntiSendAppState": true,
 	"AutoRestartMinutes": 0,
-	"RestartMQTT_Minutes": 0,
+	"RestartMQTT_Minutes": 720,
+	"UserAgent": "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 CrKey/1.54.250320",
+	"AcceptLanguage": "en-US,en;q=0.9",
+	"PreferredRegion": "SIN",
 	"Websocket_Extension": {
 		"Status": false,
 		"ResetData": false,
@@ -50,7 +51,8 @@
 		},
 		"LogFile": {
 			"Use": false,
-			"Explain": "Record memory usage logs to fix errors. Default location: Horizon_Database/memory.logs"
+			"Explain": "Record memory usage logs to fix errors. Default location: PriyanshFca_Database/memory.logs"
 		}
-	}
+	},
+	"MainName": "[ FCA-PRIYANSH ]"
 }
