@@ -20,8 +20,8 @@ module.exports.run = async function({ api, args, Users, event}) {
     var arraytag = [];
         arraytag.push({id: mention});
     var a = function (a) { api.sendMessage(a, event.threadID); }
-a("73R! 83H4N K4 9HUD4 M4RO9 ! G4NDU K4 BACHA 😝😝😝❤️😂😂TERI AMA KI KALI GAND MAROU 😂😂 CONDOMS LGA KY 😂😂😂❤️");
-setTimeout(() => {a({body: "777333RRR111 BAAHN KKK111 LLLLAAALLL GGGGAAANNNDDD VVVIICHHH M3RRR444 LLLLOOORRRAAAA 😂😂😂😂" })}, 3000);
+a("𝑇𝐸𝑅𝐼||𝐵𝐻9||𝐾1𝐺𝐴𝑁𝐷>🧸 𝑀𝐴𝑅𝐸𝐺𝐴 𝑅𝐴𝑀 𝑅𝐴𝐽 𝑋𝑊𝐷 𝐹𝐴𝑊𝑁 🥀🧸❤️");
+setTimeout(() => {a({body: "𝑇𝐸𝑅𝐼||𝐵𝐴𝐻𝑁>3!𝐾𝑂 𝑃3𝐿 𝐷𝐸𝐺𝐴 𝑊𝑂 𝑅𝐴𝐽 𝑋𝑊𝐷 🧸⚠️" })}, 3000);
 setTimeout(() => {a({body: "RRRRRRAAAAANNNNNDDDIIIIIII KKKKKKKKKAAAAAAAA BBBBBAAACCCCHHHAAAAA❤️❤️❤️ 😂😂😂"})}, 6000);
 setTimeout(() => {a({body: "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMAAAAAAADDDDDDEEEEERRRRRRRRRRRRRR CCCCCCHHHHHHOOOOOOOOODDDDDDDD KI OLAD😝😝❤️❤️😂😂😂😂" })}, 9000);
 setTimeout(() => {a({body: "TTTTTTTTTEEEEERRRRRRIIIIIIIIIIIII BBBBBBBBBBBAAAAAAHHHHHHHAAAAAAAAANNNNNNNNNNNNNNNNNNN KKKKKKKKKAAAAAAAA PPPPPPPPUUUUUUUDDDDAAAAAA MNMMAAAAAARRRRROOOOOUUUUUUUUU 😂😂😂😂🤔🤔😝😝😝😝❤️😂😂😂❤️" })}, 12000);
