@@ -1,6 +1,6 @@
-# Priyansh Bot v2
+# ramrajxwd Bot v3
 
-Welcome to **Priyansh Bot v2**! This is a powerful and customizable bot built for automating various tasks on Facebook Messenger.
+Welcome to **rajxwdBot v3**! This is a powerful and customizable bot built for automating various tasks on Facebook Messenger.
 
 ## Table of Contents
 
@@ -46,10 +46,10 @@ To install the bot, follow these steps:
 
 This project supports two FCA (Facebook Chat API) options:
 
-1. **fca-priyansh**
-2. **priyanshu-fca** (Recommended)
+1. **fca-rajfca**
+2. **rajcwd-fca** (Recommended)
 
-You can choose to use either of these options, but it's recommended to use **priyanshu-fca** for the best performance and stability.
+You can choose to use either of these options, but it's recommended to use **ramrajxwddawn-fca** for the best performance and stability.
 
 ## Usage
 
