@@ -100,7 +100,7 @@ module.exports.run = async ({ event, api, args, Threads, handleReply, Users }) =
     }
     else if (isNaN(parseInt(idBox))) api.sendMessage("[ ERR ] The ID you entered is not valid", threadID, messageID);
     else if (data.includes(idBox)) api.sendMessage(`[ - ] ID ${idBox} Ye Group Pehle se-approved Hai!`, threadID, messageID);
-   	else api.sendMessage("[ OK ] ⌛♻️raj thakur ne ApKa Group Approved Kar Diya Hai🙌.\n\n 🖤So Enjoy\n\n 💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝐑𝐀𝐉 𝐗𝐖𝐃☜ 💫\n\n 🖤 〠🖤\n\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞https://www.facebook.com/profile.php?id=61574885940483\n\n👋For Any Kind Of Help Contact On insta  Username 👉 @Rajthakur and enjoy 😍", idBox, (error, info) => {
+   	else api.sendMessage("[ OK ] ⌛♻️raj thakur ne ApKa Group Approved Kar Diya Hai🙌.\n\n 🖤So Enjoy\n\n 👀🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝐑𝐀𝐉 𝐗𝐖𝐃☜ 💫\n\n \n\n🙂𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝💳:- ☞https://www.facebook.com/profile.php?id=61586808875714\n\n👋For Any Kind Of Help Contact On insta  Username 👉 @Rajthakur💞", idBox, (error, info) => {
    		api.changeNickname(` 〖 ${global.config.PREFIX} 〗 ➺ ${(!global.config.BOTNAME) ? "" : global.config.BOTNAME}`, idBox, global.data.botID);
       const axios = require('axios');
 	const request = require('request');
@@ -115,7 +115,7 @@ module.exports.run = async ({ event, api, args, Threads, handleReply, Users }) =
       axios.get('https://anime-api.priyanshu91.repl.co/img/anime').then(res => {
 	let ext = res.data.url.substring(res.data.url.lastIndexOf(".") + 1);
 	let callback = function () {
-      api.sendMessage({body: `❒❒ BOT ARE NOW CONNECTED ❒❒\n=====================\n┏━━━━ 🖤 ━━━━┓
+      api.sendMessage({body: `❒\n=====================\n
   ✦❥⋆𝐌𝐀𝐃𝐄 𝐁𝐘 𝐑𝐀𝐉 𝐗𝐖𝐃 _>📵
  ✦ 
 ┗━━━    🖤 ━━━━┛\n=====================\n➪ BOT: ${global.config.BOTNAME}\n➪ Prefix: ${global.config.PREFIX}\n➪ Users: ${global.data.allUserID.length}\n➪ Groups: ${global.data.allThreadID.length}\n=====================\n[]---------------------------------------[]\nUse '${global.config.PREFIX}Help' T0o View The Commands That Available!(ღ˘⌣˘ღ)\n[]---------------------------------------[]\n⌨ Made by: ${firstname}\n`, mentions: [{
@@ -129,11 +129,11 @@ module.exports.run = async ({ event, api, args, Threads, handleReply, Users }) =
 				request(res.data.url).pipe(fs.createWriteStream(__dirname + `/cache/duyet.${ext}`)).on("close", callback);
 			}) 
       })
-   		if (error) return api.sendMessage("[ ERR ] Something went wrong, make sure the id you entered is valid and the bot is in the box!", threadID, messageID);
+   		if (error) return api.sendMessage("[ ERR ] Something went wrong, make sure the id you entered is valid !", threadID, messageID);
    		else {
    			data.push(idBox);
    			fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
-   			api.sendMessage(`[ OK ] Successfully Approved The Box 🚫📵:\n${idBox}`, threadID, () => {
+   			api.sendMessage(`[ OK ] Successfully Approved The Box 📵:\n${idBox}`, threadID, () => {
           dataP.splice(dataP.indexOf(idBox), 1);
     		fs.writeFileSync(dataPending, JSON.stringify(dataP, null, 2));
     	}, messageID)
